@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo "Construyendo..."
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testeando..."
+            }
+        }
+    }
+    post {
+        always {
+            echo "Este pipeline siempre se ejecutará, sin importar si tuvo éxito o fracaso en el github."
+        }
+    }
+}
